@@ -2,7 +2,7 @@
  
 欄位   | 連結
 -------|---------------------------------------
-書籍   |  [計算機結構 - 從 nand2tetris 入門](https://github.com/cccbook/cojs/wiki)
+書籍   |  [計算機結構 - 從 nand2tetris 入門](https://github.com/cccbook/co/wiki)
 範例   |  [example](example)
 練習   |  [exercise](exercise)
 專案   |  [project](project)
