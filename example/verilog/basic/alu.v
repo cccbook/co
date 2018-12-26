@@ -1,40 +1,40 @@
-// ¿é¤J a, b «á·|°õ¦æ op ©Ò«ü©wªº¹Bºâ¡AµM«á±Nµ²ªG©ñ¦b¼È¦s¾¹ y ·í¤¤
+// è¼¸å…¥ a, b å¾ŒæœƒåŸ·è¡Œ op æ‰€æŒ‡å®šçš„é‹ç®—ï¼Œç„¶å¾Œå°‡çµæœæ”¾åœ¨æš«å­˜å™¨ y ç•¶ä¸­
 module alu(input [7:0] a, input [7:0] b, input [2:0] op, output reg [7:0] y);
-always@(a or b or op) begin // ·í a, b ©Î op ¦³§ïÅÜ®É¡A´N¶i¤J¦¹°Ï¶ô°õ¦æ¡C
-  case(op)                  // ®Ú¾Ú op ¨M©w­n°õ¦æ¦óºØ¹Bºâ
-    3'b000: y = a + b;      // op=000, °õ¦æ¥[ªk
-    3'b001: y = a - b;      // op=000, °õ¦æ´îªk
-    3'b010: y = a * b;      // op=000, °õ¦æ­¼ªk
-    3'b011: y = a / b;      // op=000, °õ¦æ°£ªk
-    3'b100: y = a & b;      // op=000, °õ¦æ AND
-    3'b101: y = a | b;      // op=000, °õ¦æ OR
-    3'b110: y = ~a;         // op=000, °õ¦æ NOT
-    3'b111: y = a ^ b;      // op=000, °õ¦æ XOR
+always@(a or b or op) begin // ç•¶ a, b æˆ– op æœ‰æ”¹è®Šæ™‚ï¼Œå°±é€²å…¥æ­¤å€å¡ŠåŸ·è¡Œã€‚
+  case(op)                  // æ ¹æ“š op æ±ºå®šè¦åŸ·è¡Œä½•ç¨®é‹ç®—
+    3'b000: y = a + b;      // op=000, åŸ·è¡ŒåŠ æ³•
+    3'b001: y = a - b;      // op=000, åŸ·è¡Œæ¸›æ³•
+    3'b010: y = a * b;      // op=000, åŸ·è¡Œä¹˜æ³•
+    3'b011: y = a / b;      // op=000, åŸ·è¡Œé™¤æ³•
+    3'b100: y = a & b;      // op=000, åŸ·è¡Œ AND
+    3'b101: y = a | b;      // op=000, åŸ·è¡Œ OR
+    3'b110: y = ~a;         // op=000, åŸ·è¡Œ NOT
+    3'b111: y = a ^ b;      // op=000, åŸ·è¡Œ XOR
   endcase
-  $display("base 10 : %dns : op=%d a=%d b=%d y=%d", $stime, op, a, b, y); // ¦L¥X op, a, b, y ªº 10 ¶i¦ì­È¡C
-  $display("base  2 : %dns : op=%b a=%b b=%b y=%b", $stime, op, a, b, y); // ¦L¥X op, a, b, y ªº  2 ¶i¦ì­È¡C
+  $display("base 10 : %dns : op=%d a=%d b=%d y=%d", $stime, op, a, b, y); // å°å‡º op, a, b, y çš„ 10 é€²ä½å€¼ã€‚
+  $display("base  2 : %dns : op=%b a=%b b=%b y=%b", $stime, op, a, b, y); // å°å‡º op, a, b, y çš„  2 é€²ä½å€¼ã€‚
 end
 endmodule
 
-module main;                // ´ú¸Õµ{¦¡¶}©l
- reg  [7:0] a, b;           // «Å§i a, b ¬° 8 ¦ì¤¸¼È¦s¾¹
- wire  [7:0] y;             // «Å§i y ¬° 8 ¦ì¤¸½u¸ô
- reg  [2:0] op;             // «Å§i op ¬° 3 ¦ì¤¸¼È¦s¾¹
+module main;                // æ¸¬è©¦ç¨‹å¼é–‹å§‹
+ reg  [7:0] a, b;           // å®£å‘Š a, b ç‚º 8 ä½å…ƒæš«å­˜å™¨
+ wire  [7:0] y;             // å®£å‘Š y ç‚º 8 ä½å…ƒç·šè·¯
+ reg  [2:0] op;             // å®£å‘Š op ç‚º 3 ä½å…ƒæš«å­˜å™¨
 
- alu alu1(a, b, op, y);     // «Ø¥ß¤@­Ó alu ³æ¤¸¡A¦WºÙ¬° alu1
+ alu alu1(a, b, op, y);     // å»ºç«‹ä¸€å€‹ alu å–®å…ƒï¼Œåç¨±ç‚º alu1
 
- initial begin              // ´ú¸Õµ{¦¡ªºªì©l¤Æ°Ê§@
-  a = 8'h07;                // ³]©w a ¬°¼Æ­È 7
-  b = 8'h03;                // ³]©w b ¬°¼Æ­È 3
-  op = 3'b000;              // ³]©w op ªºªì©l­È¬° 000
+ initial begin              // æ¸¬è©¦ç¨‹å¼çš„åˆå§‹åŒ–å‹•ä½œ
+  a = 8'h07;                // è¨­å®š a ç‚ºæ•¸å€¼ 7
+  b = 8'h03;                // è¨­å®š b ç‚ºæ•¸å€¼ 3
+  op = 3'b000;              // è¨­å®š op çš„åˆå§‹å€¼ç‚º 000
   $dumpfile("alu.vcd");
   $dumpvars;
  end
 
- always #50 begin           // ¨C­Ó 50 ©`¬í´N§@¤U¦C°Ê§@
-   op = op + 1;             // Åı op ªº­È¥[ 1
+ always #50 begin           // æ¯å€‹ 50 å¥ˆç§’å°±ä½œä¸‹åˆ—å‹•ä½œ
+   op = op + 1;             // è®“ op çš„å€¼åŠ  1
  end
 
-initial #1000 $finish;      // ®É¶¡¨ì 1000 ©`¬í´Nµ²§ô
+initial #1000 $finish;      // æ™‚é–“åˆ° 1000 å¥ˆç§’å°±çµæŸ
 
 endmodule

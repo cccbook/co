@@ -2,13 +2,13 @@ module regbank(input [3:0] ra1, output [31:0] rd1,
                input [3:0] ra2, output [31:0] rd2,
                input clk, input w_en, 
                input [3:0] wa, input [31:0] wd);
- reg [31:0] r[15:0]; // «Å§i 16 ­Ó 32 ¦ì¤¸ªº¼È¦s¾¹
- assign rd1 = r[ra1]; // Åª¨ú¯Á¤Ş­È¬° ra1 ªº¼È¦s¾¹
- assign rd2 = r[ra2]; // Åª¨ú¯Á¤Ş­È¬° ra2 ªº¼È¦s¾¹
+ reg [31:0] r[15:0]; // å®£å‘Š 16 å€‹ 32 ä½å…ƒçš„æš«å­˜å™¨
+ assign rd1 = r[ra1]; // è®€å–ç´¢å¼•å€¼ç‚º ra1 çš„æš«å­˜å™¨
+ assign rd2 = r[ra2]; // è®€å–ç´¢å¼•å€¼ç‚º ra2 çš„æš«å­˜å™¨
  always @(posedge clk)
  begin
-  if (w_en) // w_en=1 ®É¼g¤J¨ì¼È¦s¾¹
-    r[wa] <= wd; // ±N wd ¼g¤J¨ì¯Á¤Ş­È¬° wa ªº¼È¦s¾¹
+  if (w_en) // w_en=1 æ™‚å¯«å…¥åˆ°æš«å­˜å™¨
+    r[wa] <= wd; // å°‡ wd å¯«å…¥åˆ°ç´¢å¼•å€¼ç‚º wa çš„æš«å­˜å™¨
  end
 endmodule
 

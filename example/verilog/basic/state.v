@@ -3,7 +3,7 @@ module FSM(input reset, clock);
   parameter [2:0] start=0, fetch=1, decode=2, execute=3;
   reg [2:0] pstate, nstate;
   
-  always @(pstate) begin :combinatorial // ¦b clock ®É¯ßªº¥¿Ãä½t®ÉÄ²µo
+  always @(pstate) begin :combinatorial // åœ¨ clock æ™‚è„ˆçš„æ­£é‚Šç·£æ™‚è§¸ç™¼
     case (pstate)
       start: begin
 	    nstate = fetch;
@@ -19,7 +19,7 @@ module FSM(input reset, clock);
       end
     endcase
   end
-  always @(posedge clock or reset) begin : sequential // ¦b clock ®É¯ßªº¥¿Ãä½t®ÉÄ²µo
+  always @(posedge clock or reset) begin : sequential // åœ¨ clock æ™‚è„ˆçš„æ­£é‚Šç·£æ™‚è§¸ç™¼
     if (reset) 
 	  pstate <= start;
 	else 
@@ -27,17 +27,17 @@ module FSM(input reset, clock);
   end
 endmodule
 
-module main;           // ´ú¸Õµ{¦¡¶}©l
-reg clock, reset;      // ®É¯ß clock ÅÜ¼Æ
+module main;           // æ¸¬è©¦ç¨‹å¼é–‹å§‹
+reg clock, reset;      // æ™‚è„ˆ clock è®Šæ•¸
 
-FSM fsm(reset, clock); // «Å§i³B²z¾¹
+FSM fsm(reset, clock); // å®£å‘Šè™•ç†å™¨
 
 initial begin
   clock = 0;
-  reset = 1;          // ¤@¶}©l¥ý­«¸m
+  reset = 1;          // ä¸€é–‹å§‹å…ˆé‡ç½®
   $monitor("%5dns: reset=%x, pstate=%x ", $stime, reset, mcu0.pstate);
   #50 reset = 0;
   #1000 $finish;
 end
-always #5 clock=~clock;    // ¨C¹j 10ns ¤Ï¬Û¡A®É¯ß¶g´Á¬° 20ns
+always #5 clock=~clock;    // æ¯éš” 10ns åç›¸ï¼Œæ™‚è„ˆé€±æœŸç‚º 20ns
 endmodule

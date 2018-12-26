@@ -28,7 +28,7 @@ begin
   clk = 0;
   D = 0;
   $monitor("%4dns monitor: clk=%d en=%d D=%d Q=%d Qbar=%d", $stime, clk, en, D, Q, Qbar);
-  $dumpfile("ptdLatch.vcd"); // ¿é¥Xµ¹ GTK wave Åã¥Üªi«¬
+  $dumpfile("ptdLatch.vcd"); // è¼¸å‡ºçµ¦ GTK wave é¡¯ç¤ºæ³¢åž‹
   $dumpvars;  
 end
 

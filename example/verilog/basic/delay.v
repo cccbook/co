@@ -7,7 +7,7 @@ module main;
  initial begin
    clk = 0;
    $monitor("%dns monitor: clk=%b nclk1=%d nclk2=%d", $stime, clk, nclk1, nclk2);
-   $dumpfile("delay.vcd"); // ¿é¥Xµ¹ GTK wave Åã¥Üªi«¬
+   $dumpfile("delay.vcd"); // è¼¸å‡ºçµ¦ GTK wave é¡¯ç¤ºæ³¢åž‹
    $dumpvars;
  end
 
@@ -18,3 +18,4 @@ module main;
 initial #100 $finish;
 
 endmodule
+

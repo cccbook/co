@@ -7,5 +7,6 @@ initial begin
   #300; $finish;
 end
 
-always #5 clock=~clock; // ¨C¹j 5ns ¤Ï¬Û¡A®É¯ß¶g´Á¬° 10ns
+always #5 clock=~clock; // æ¯éš” 5ns åç›¸ï¼Œæ™‚è„ˆé€±æœŸç‚º 10ns
 endmodule
+

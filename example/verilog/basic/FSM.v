@@ -26,17 +26,17 @@ module FSM(input reset, clock);
   end
 endmodule
 
-module main;           // ´ú¸Õµ{¦¡¶}©l
+module main;           // æ¸¬è©¦ç¨‹å¼é–‹å§‹
 reg clock, reset;
 
-FSM fsm(reset, clock); // «Å§i³B²z¾¹
+FSM fsm(reset, clock); // å®£å‘Šè™•ç†å™¨
 
 initial begin
   clock = 0;
-  reset = 1;          // ¤@¶}©l¥ı­«¸m
+  reset = 1;          // ä¸€é–‹å§‹å…ˆé‡ç½®
   $monitor("%5dns: reset=%x, pstate=%x ", $stime, reset, fsm.pstate);
   #50 reset = 0;
   #500 $finish;
 end
-always #5 clock=~clock;// ¤£Â_¤Ï¬Û¡A²£¥Íªi§Î
+always #5 clock=~clock;// ä¸æ–·åç›¸ï¼Œç”¢ç”Ÿæ³¢å½¢
 endmodule

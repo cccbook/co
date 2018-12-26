@@ -35,23 +35,23 @@ wire [7:0] dbus_out;
 
 memory DUT (.clock(clock), .reset(reset), .en(en), .r_w(r_w), .abus(addr), .dbus_in(data_in), .dbus_out(dbus_out));
 
-initial // reset¡G³]©w memory ¤º®e¬° 0,1,2,....,127
+initial // resetï¼šè¨­å®š memory å…§å®¹ç‚º 0,1,2,....,127
 begin
   clock = 0;
   reset = 1;
   en = 0;
-  r_w = 1; // r_w=1:Åª¨ú¼Ò¦¡
+  r_w = 1; // r_w=1:è®€å–æ¨¡å¼
   #75;
   en = 1;
   reset = 0;
   addr = 0;
   #500;
   addr = 1;
-  r_w = 0; // ¼g¤J¼Ò¦¡
+  r_w = 0; // å¯«å…¥æ¨¡å¼
   data_in = 8'h3A;
   #100;
   addr = 0;
-  r_w = 1; // Åª¨ú¼Ò¦¡
+  r_w = 1; // è®€å–æ¨¡å¼
   data_in = 0;
 end
 

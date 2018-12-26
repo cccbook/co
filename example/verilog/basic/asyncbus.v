@@ -39,7 +39,7 @@ wdevice wd(clock, w, abus, dbus);
 
 initial begin
   $monitor("%4dns abus=%x dbus=%x w=%x m.ar=%x m.dr=%x rd.dr=%x wd.dr=%x", $stime, abus, dbus, w, m.ar, m.dr, rd.dr, wd.dr);
-  $dumpfile("syncbus.vcd"); // ¿é¥Xµ¹ GTK wave Åã¥Üªi«¬
+  $dumpfile("syncbus.vcd"); // è¼¸å‡ºçµ¦ GTK wave é¡¯ç¤ºæ³¢å‹
   $dumpvars;    
   clock = 0;
   #10; m.ar=16'h0000; w=0; 
@@ -48,5 +48,5 @@ initial begin
   #300; $finish;
 end
 
-always #5 clock=~clock; // ¨C¹j 5ns ¤Ï¬Û¡A®É¯ß¶g´Á¬° 10ns
+always #5 clock=~clock; // æ¯éš” 5ns åç›¸ï¼Œæ™‚è„ˆé€±æœŸç‚º 10ns
 endmodule

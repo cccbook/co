@@ -1,5 +1,5 @@
-// �ѦҡGhttp://www.ece.lsu.edu/ee3755/2002/l07.html
-// �ѦҡGhttp://answers.google.com/answers/threadview/id/109219.html
+// 參考：http://www.ece.lsu.edu/ee3755/2002/l07.html
+// 參考：http://answers.google.com/answers/threadview/id/109219.html
 // a/b = q ; a%b = r;
 module divider(output reg [31:0] q, output [31:0] r, output ready, input [31:0]  a,b, input start, clk);
    reg [63:0]    ta, tb, diff;
