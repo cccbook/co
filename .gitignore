@@ -1,6 +1,9 @@
 # exe
 *.exe
 
+*.o
+*.bin
+
 # bak
 *.bak
 bak
