@@ -12,7 +12,7 @@ Xor  g5(a, b, abXor);
 
 initial
 begin
-  $monitor("%4dns a=%d b=%d aNot=%d abNand=%d abAnd=%d abOr=%d abXor=%d", $stime, a, b, aNot, abNand, abAnd, abOr, abXor);
+  $monitor("%4dns b=%d a=%d aNot=%d abNand=%d abAnd=%d abOr=%d abXor=%d", $stime, b, a, aNot, abNand, abAnd, abOr, abXor);
   a  = 0;
   b  = 0;
 end
